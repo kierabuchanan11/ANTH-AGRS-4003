@@ -1,0 +1,127 @@
+Python 3.14.3 (v3.14.3:323c59a5e34, Feb  3 2026, 11:41:37) [Clang 16.0.0 (clang-1600.0.26.6)] on darwin
+Enter "help" below or click "Help" above for more information.
+domestic_keywords = ["house", "mythological", "frescoes", "bracelet", "terraces", "rooms", "peristylium", "owner", "owes", "mosaics", "layout", "golden", "decoration", "complex", "city", "atrium", "welcoming", "welcome", "warehouse", "views", "vedius", "vaulted‚Äù, ‚Äútownhouse", "terme", "tablinum"]
+religious_keywords = ["temple", "marble", "alter", "statues", "sanctuary", "portico", "imperial", "forum", "emperor", "cult", "century", "built", "building", "rich", "genius", "concordia", "capitolium", "worship", "tullius", "square", "public", "presence", "niches", "motives", "jupiter", "inscription", "honour", "high", "god", "fortuna", "family", "decoration", "courtyard"]
+def classify_report(report_text):
+    text = report_text.lower()
+    domestic_count = sum(text.count(word) for word in domestic_keywords)
+    religious_count = sum(text.count(word) for word in religious_keywords)
+    if domestic_count < 2 and religious_count < 2:
+        return "Unclear"
+    if abs(domestic_count - religious_count) <= 2:
+        return "Unclear"
+    if domestic_count > religious_count:
+        return "Domestic"
+    else:
+        return "Religious"
+
+    
+report1 = "The Suburban Baths, located immediately beneath the Marina Gate, are built halfway along the walls, which during the 1st century BC had lost their defensive function; unlike the Stabian Baths (see page 95) and those of the Forum (see page 84), the Suburban Baths were private. There are small erotic paintings in the changing room (apodyterium) that advertise the activities held in the halls of the upper floor, probably intended for prostitution, as often happened, illegally, in the baths. The other thermal areas have sumptuous decorations. A waterfall flowed in the small cold pool from a fake cave, adorned with a mosaic depicting Cupids handing over their weapons to Mars, the walls were frescoed with paintings that reproduced naval battles marine wildlife. Besides the normal sequence of rooms that range from the more moderate to the hottest, the section of the heated rooms also includes a large pool that is heated by means of a large bronze brazier, placed at the bottom."
+category = classify_report(report1)
+print(category)
+SyntaxError: multiple statements found while compiling a single statement
+print(category)
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    print(category)
+NameError: name 'category' is not defined
+category = classify_report(report1)
+print(category)
+
+Unclear
+report2 = "Similar to a bastion perched on the edge of the plane, the gate provides access to the west of the city and it is the most impressive among the seven gates of Pompeii. The name derives from the fact that the exit road led to the sea. The layout with a barrel vault made of concrete, that is a mixture of mortar and stones, dates back to the Silla colony (80 BC). The gate has two fornix, the main one being higher, intended for the passage of horses and pack animals; the smaller one, more forward, intended for pedestrian passage. The city walls that can be seen today, already in place in the 6th century BC, is over 3200 m long: it consists of a double wall with a walkway, protected inside by an embankment. Twelve towers, more on the north side where the flat terrain made Pompeii more vulnerable, guaranteed defence. The definitive entrance of the city within the Roman orbit decreased the importance of the walls, sometimes re-used and destroyed to make place in homes."
+category = classify_report(report2)
+print(category)
+Unclear
+report3 = "The house, whose layout dates back to the 2nd century BC, required a great construction commitment since the significant difference in height between the various areas throughout had to be compensated for by constructing vaulted semi-hypogean* rooms used as a warehouse. The presence of a vast commercial and productive area within an elegant townhouse is an exception in Pompeii. The main rooms of the house open on to an impressive atrium*, which was redecorated at the end of the 1st century BC with several interesting black and white mosaics. A small thermal complex was also added at the time. The house, unearthed since 1871, owes its name to the mosaic with six prows of ships within arsenals at the entrance, an allusion to the peaceful haven offered to its occupants and perhaps even to the amateur activity of the owner."
+category = classify_report(report3)
+print(category)
+Domestic
+report4 = "The Sanctuary of Apollo is one of the oldest places of worship in Pompeii, built in a strategic point, along the path that goes up to Marina Gate that led to the public heart of the city. The choice of god as the founding cult of the settlement refers to the Greek and Etruscan presence in the Campania region. Deep excavations have allowed the earlier phases to be exposed, documented from vases, votive items and terracotta decorations that document the presence of an archaic temple (6th century BC). Between the 3rd and 2nd century BC the old building was completely renovated until it achieved the shape that, with a minor Neronian renovation, reached the dramatic days of the eruption: a temple on a basis*, surrounded by a portico-style area, which defines a courtyard that has an altar at its centre. A sequence of open doors on the eastern wall, a monumental colonnade that might have had a terrace, connected the sanctuary to the square of the forum: gladiatorial games and theatrical performances of ludi Apollinares, the festivities in honour of the god focused on the initiations of boys and girls who recognised tutelary deities in Apollo and his twin sister, Diana. Both were depicted in bronze, precious sculptures from the Hellenistic period, preserved in the National Archaeological Museum of Naples and the copy of which is exhibited here."
+category = classify_report(report4)
+print(category)
+Religious
+report5 = "The Civil Forum is the core of daily life of the city and is the focal point of all the main public buildings for city administration and justice, for business management, for trade activities, such as markets, as well as the main places of citizen worship. The square of the Forum originally looked like a simple open area with an overall regular shape, made of clay and its western side opened on to the Sanctuary of Apollo (see page 83), whereas the eastern side had a row of shops. The Forum was significantly modified between the 3rd and 2nd century BC when the shape of the square was regularised, surrounded by porticoes and the bottom paved with slabs of tuff. The axis of the square became the fa√ßade of the Temple of Jupiter (see page 87), aligned with Mount Vesuvius. At the beginning of the Imperial age the Forum was re-paved with travertine slabs, some of which are no longer in their original location and have a groove to accommodate the bronze letters that belonged to a large inscription. Excavations that began upon the requests of Maria Carolina Bonaparte immediately indicated that the area had been explored and stripped of its decorations in ancient times."
+category = classify_report(report5)
+print(category)
+Religious
+report6 = "In a niche in the western perimeter wall of the Sanctuary of Apollo there is a copy of the Mensa Ponderaria, the original of which is kept at the National Archaeological Museum of Naples. It is a counter used to check the capacity measures used for goods in trade. Both liquid and solid food, such as cereals, could be measured. These were placed in the appropriate containers and sealed with caps and lastly, emptied after verification. This counter was already present in pre-Roman times, as indicated by three inscriptions in the Oscan language then deleted when colony was founded (80 BC), and its upgrade to the system of Roman weights and measures, as evidenced by the inscription that is still visible."
+category = classify_report(report6)
+print(category)
+Unclear
+report7 = "They stretch on the western side of the Forum with eight openings separated by brick pillars and were used as for the fruit and vegetable market (Forum Holitorium). Today they form the most important archaeological inventory of the city and have more than 9000 artefacts from the excavations in Pompeii and its territory since the end of the 19th century. They preserve the terracotta crockery that was used in the last decades of life of the city for the every day activities, such as pots and pans for cooking, jugs and bottles, and amphorae, large containers used to transport oil, wine and fish sauce throughout the Mediterranean. The exhibited items also include marble tables and baths for fountains that adorned the entrances of houses and some casts of victims of the eruption as well as that of a dog and a tree. The building was built after the earthquake of 62 AD and it might have not been completed at the time of the eruption. "
+category = classify_report(report7)
+print(category)
+Religious
+report8 = "The Temple of Jupiter dominates the north side of the Forum, and behind scenically rises Mount Vesuvius. When the colony was founded (80 BC), the temple underwent a radical renovation and became a real Capitolium with the three cult statues of Jupiter, Juno and Minerva, which looked like those of the Capitolium in Rome, placed on a high base so as to make them visible to whoever passed in the Forum square. The new works extended the cell of the temple, in which a rich mosaic floor with marble elements was laid. The favissae open in the basis*, underground areas originally used for the offerings to the gods. According to some studies, in time they probably protected the public treasury of the city. There were two equestrian statues on the sides of the basis of the Capitolium, as evidenced by the relief found in the lararium* of the house of Lucio Cecilio Giocondo (see page 51)."
+category = classify_report(report8)
+print(category)
+Religious
+report9 = "On the sides of the temple of Jupiter (see page 87), in the northern part of the Forum, there were two old honorary arches made of bricks and covered with marble. On the east side only traces of the foundations remain, which was probably dedicated to the Emperor Caligula (37-41 AD) and was demolished after his death. The arch on the west was instead dedicated to Drusus, son of Emperor Tiberius; a relief of the lararium* of the house of Cecilio Giocondo shows it collapsing during the earthquake of 62 AD, after which it was rebuilt and redecorated. The exit of the east portico of the Forum on the north side is dominated by another honorary double arch fornix*, originally covered with marble; the top houses a large tank intended to supply the fountain on the external fa√ßade and was decorated with statues of the emperors of the Julio-Claudian dynasty. It was probably dedicated to Germanicus and replaced that dedicated to Caligula. An arch was built in the era of Tiberius (14-37 AD) near the temple of Fortuna Augusta (see page 90) halfway along via di Mercurio. The arch closed the sequence of buildings intended for the imperial cult."
+category = classify_report(report9)
+print(category)
+
+Religious
+report10 = "The Forum Baths are located behind the Temple of Jupiter (see page 87) and date back to the years immediately after the founding of the colony of veterans by General Silla (80 BC). Women's and men's quarters had separate entrances. The man's section presents an apodyterium (dressing room), used also as a tepidarium (for medium temperature baths), frigidarium (for cold baths) and calidarium (for hot baths). Like many buildings in Pompeii, the baths were heavily damaged during the earthquake of 62 AD. The current state mainly derives from the results of the subsequent restoration works. Significant attention and effort was devoted to the decoration of the rooms, such as the niches for storing clothes and objects for the bathroom decorated with male figures in terracotta (telamones*) and the vault with elaborate stucco in relief of the apodyterium-tepidarium. In the same room one notices a great bronze brazier that was used for heating. The women's quarters, which is smaller, was being renovated at the time of the eruption. More than 500 lamps found in the entrance of the men's quarters were used for lighting during the evening openings.
+SyntaxError: unterminated string literal (detected at line 1)
+report10 = "The Forum Baths are located behind the Temple of Jupiter (see page 87) and date back to the years immediately after the founding of the colony of veterans by General Silla (80 BC). Women's and men's quarters had separate entrances. The man's section presents an apodyterium (dressing room), used also as a tepidarium (for medium temperature baths), frigidarium (for cold baths) and calidarium (for hot baths). Like many buildings in Pompeii, the baths were heavily damaged during the earthquake of 62 AD. The current state mainly derives from the results of the subsequent restoration works. Significant attention and effort was devoted to the decoration of the rooms, such as the niches for storing clothes and objects for the bathroom decorated with male figures in terracotta (telamones*) and the vault with elaborate stucco in relief of the apodyterium-tepidarium. In the same room one notices a great bronze brazier that was used for heating. The women's quarters, which is smaller, was being renovated at the time of the eruption. More than 500 lamps found in the entrance of the men's quarters were used for lighting during the evening openings. "
+category = classify_report(report10)
+print(category)
+
+Religious
+report11 = "Like many other places of worship throughout the Roman Empire, this small temple on the basis* with marble capitals and columns and with the altar at the front was not only dedicated to the celebration of specific rituals in honour of Emperor Augustus (31 BC-14 AD) but also to the propaganda in favour of the imperial house by the local elite. In this case, an inscription gives us the name of the manufacturer of the building: Marcus Tullius, son of Marcus, duoviri* of Pompeii. The construction of the temple at his own expense and on land owned by him, made Marcus Tullius a strong supporter of the emperor. The cult of Fortuna Augusta was looked after by a group of slaves and liberti*, that is groups particularly related to the emperor as the guarantor of their rights and ambitions. The marble coatings that adorned the building were removed just a few years after the eruption. There was a statue of Fortuna in the cell of the temple and statues of the imperial family in the niches on the side. "
+category = classify_report(report11)
+print(category)
+
+Religious
+report12 = "The Macellum consists of a tuff quadriporticus with a hall for worship in an elevated position on the eastern side, in line with the entrance. The copies of two marble statues, a female and a male armed, are found on the niches of the side wall, together with the fragment of a larger statue, probably pertaining to an emperor, Titus or Vespasian, indicating how this area was intended for the imperial cult. To its left is a room for meetings of a sacred board and to the right a large room with a masonry counter perhaps for fish to be sold. There was a circular structure (tholos) at the centre of the courtyard, which was also used for selling and cleaning fish; the shops are lined up along the southern side. The walls of the porticoes were decorated with scenes from daily life, such as selling fish and poultry, and mythological subjects. The building was built between 130-120 BC"
+category = classify_report(report12)
+print(category)
+
+Religious
+report13 = "This sanctuary, together with the other temples for the imperial cult, such as the Temple of the Genius Augusti (below) and the Portico of Concordia Augusta (see page 94), was built in an area formerly taken up by shops. The large building, completely open on the Forum (see page 84), was fitted with a central altar, where sacrifices could be offered for the emperor as well as for citizens of Lari. There are two large exedras* on either side of the central apse and several niches intended to house the statues of the imperial family. Only a few fragments of the rich marble covering are preserved, which was destroyed shortly after the eruption 79 AD. The Sanctuary was built prior to the earthquake of 62 AD but following the rule of Augustus (first decades of the 1st century AD)."
+category = classify_report(report13)
+print(category)
+
+Religious
+report14 = "The Temple of the Genius Augusti was built upon the requests of Mamia, mentioned in an inscription as priestess of Cerere and the Genius of Augustus. The construction of this temple in the Augustan period (first decade of the 1st century AD) adopted the same architectural design as the adjacent Portico of Concordia Augusta (see page 94), as indicated by the marble decoration of the fa√ßade, the bottom part of which can now only be seen, by motives in a niche and the renewed altar and partly completed after the earthquake of 62 AD. The temple included a small courtyard, an altar and a small temple with four columns on a high basis*, accessible from both sides. The beautiful marble decoration with floral motives filled with rich fauna, today seen at the entrance of the Portico of the Concordia of Eumachia, was likely to belong to the entrance of the temple. The frieze was made based on the model of the Ara Pacis in Rome."
+category = classify_report(report14)
+print(category)
+
+Religious
+report15 = "This building, the most impressive on the eastern side of the Forum, was built by Eumachia, priestess of Venus belonging to a very rich family from Pompeii, to worship the emperor. The statues of the the richest and most important people in Pompeii were exhibited below the portico in front of the entrance and two elogia of Romulus and Aeneas, that is two inscriptions with the list of good deeds performed by them, were placed at the sides of the large entrance, below the niches that can still be seen today. The rich marble frame of the entrance with scrolls of acanthus filled with animals was found in the Forum and was mistakenly relocated here when it actually belonged to the adjacent Temple of Genius Augusti (see page 93). The interior consisted of a portico with three wings, in the short eastern side there are three exedras*; the central one is larger and contained a statue of Concordia Augusta, now at the National Archaeological Museum of Naples. There was a covered corridor behind this portico, also with three wings, at the centre of which there was the statue of Eumachia, the copy of which is now on display as the original is at the National Archaeological Museum of Naples. Nothing remained from the rich multi-coloured marble decoration; just like other buildings of the Forum, this was ruined soon after the eruption"
+category = classify_report(report15)
+print(category)
+
+Religious
+report16 = "The main entrance on via dell'Abbondanza leads to a large courtyard. The pool is found to the left, whereas a colonnade is found to the right, which leads to the men's quarters, which are split into the apodyterium (dressing room), with the frigidarium (for cold baths), which leads to the tepidarium (for medium temperature baths) and then to the calidarium (for hot baths). The heating was guaranteed by a piping system in the walls and double floors that circulated the hot air coming from the furnaces and from mobile braziers. The women's quarters, close to the men's quarters, was split the same way in the apodyterium, tepidarium and calidarium, however, all were smaller and had no rich decorations that distinguish the men's quarters. Women entered through a separate door, on which ‚ÄúMulier‚Äù (woman) was written, in the NW corner of the courtyard, which opens on to via del Lupanare. The separation of the sexes was normal practice in the ancient world. The Stabian baths, which date back to the 2nd century BC, are among the oldest we know of in the Roman world. "
+category = classify_report(report16)
+print(category)
+
+Religious
+report17 = "The big house is the result of two houses being joined in the 1st century BC, one with its entrance on via Stabiana and the other from the Lupanare alley. The decorations of the entire property were being radically renovated at the time of the eruption, according to the principles of the time. The exedra* was one of the parts already completed, where the guests feasted on couches around a fine floor made of marble slabs and surrounded by beautiful frescoes with mythological subjects inspired by the Trojan War, one of which is exhibited at the National Archaeological Museum of Naples. The last owner of the house, Publius Vedius Siricus, was identified thanks to the discovery of a bronze seal bearing his name. Sirico belonged to the political and trade class of Pompeii and met with his supporters on a daily basis in his home welcoming them with the auspicious inscription SALVE LUCRU, Welcome, money! that could be read on the floor of the entrance."
+category = classify_report(report17)
+print(category)
+
+Domestic
+report18 = "The prostitutes in the brothel were mostly Greek and Oriental slaves who were paid between two and eight Asses (a glass of wine cost one Ass) for their services. The building has two floors. The homes of the owner and the slaves are at the top and there are five rooms at the bottom, all fitted with a built-in bed, on either side of the corridor that connects the two entrances of the ground floor. The rooms were closed by a curtain. A latrine is seen at the end of the corridor, under the staircase. Small paintings with erotic depictions on the walls of the central corridor informed customers of the activities that took place. The brothel is named from lupa, a Latin word meaning 'prostitute'."
+category = classify_report(report18)
+print(category)
+
+Unclear
+report19 = "Here, like elsewhere, the mill and bakery are connected because the place of flour production and processing are part of the same production process. The wheat is ground with large lava millstones, five fine examples of which are seen in the bakery. These are formed by two elements: a lower cone-shaped part (meta) and an upper hourglass-shaped part (catillus). The grain is poured into the catillus that turns by being pulled by slaves or animals and grinds it and then drops it below. Bread was baked in different shapes in the large oven at the centre of the building and was regularly sold in the same place in a small room with a counter. The counter is missing in this bakery; the bread was probably produced or on commission or sold wholesale or by street vendors, called libani."
+>>> category = classify_report(report19)
+>>> print(category)
+... 
+Unclear
+>>> report20 = "The house, dating back to the 2nd century BC, the front of which fully represents the typical layout of a Roman house with an entrance, atrium* and tablinum all on a single axis. Because of the limited space, the peristylium* at the back is highly irregular. It has only two columns instead of four, which mostly form an acute angle. Among the frescoes, made some years before the eruption as part of the restoration works, two mythological paintings stand out, belonging to the decoration of the central area, overlooking the garden. One can see the god Apollo and a Nymph, as well as Diana and Actaeon, a hunter who was turned into a stag by the goddess because he had seen her naked while she was bathing. The hunting scene that gave its name to the house, found in the peristylium, has become discoloured because of meteorological phenomena."
+>>> category = classify_report(report20)
+>>> print(category)
+... 
+Domestic
+>>> report21 = "The grand complex of houses of Marcus Fabius Rufus and the Golden Bracelet covers at least four levels of living space with panoramic terraces that slope scenically towards the sea. The terraces are built on top of the walls of the city but in pre-Roman times the houses were situated on the sides of one of the city gates, Porta Occidentalis, which was the intersection of via di Nola and via delle Terme. The buildings have a luxurious decoration on the floor with coloured marble mosaics (opus sectile*), as well on the wall with mythological frescoes, views of gardens and reproductions of original Greek works of the 4th century. The houses were still inhabited at the time of the eruption as evidenced by the numerous victims found and of whom casts were made. The House of the Golden Bracelet owes its name to a large gold bracelet worn by one of the victims. "
+>>> category = classify_report(report21)
+>>> print(category)
+... 
+Domestic
+
